@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            width: 0;
+            height: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            width: 2%;
+            height: 60%;
+            font-family: 'DFKai-sb';
+            font-size: 28px;
+            writing-mode: vertical-rl;
+            margin: 0 30px;
+        }
+
+        .container {
+            margin: 0 10px;
+            display: flex;
+            border: 1px solid #000;
+            background: rgb(233, 152, 59);
+            width: 580px;
+            height: 600px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .container::before {
+            position: absolute;
+            content: '';
+            width: 454px;
+            height: 510px;
+            border: 2.5px solid #222;
+        }
+
+
+        .col {
+            /* border: 1px solid #000; */
+            background: rgb(233, 152, 59);
+            width: 80%;
+            height: 56px;
+            font-size: 0;
+            text-align: center;
+        }
+
+        .col1 {
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            background: rgb(233, 152, 59);
+            width: 56px;
+            height: 100%;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .col2 {
+            border-right: 1px solid #000;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            background: rgb(233, 152, 59);
+            width: 77.6%;
+            height: 56px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .line {
+            width: 56px;
+            height: 56px;
+            position: relative;
+        }
+
+        .line::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-top: 0.5px solid #000;
+            /* background-color: red; */
+            width: 141%;
+            height: 0.5px;
+            transform-origin: 0 0;
+            transform: rotate(45deg);
+        }
+
+        .line2 {
+            width: 56px;
+            height: 56px;
+            position: relative;
+        }
+
+        .line2::before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: 55px;
+            border-top: 1px solid #000;
+            /* background-color: red; */
+            width: 141%;
+            height: 1px;
+            transform-origin: 0 0;
+            transform: rotate(-45deg);
+        }
+
+
+        .box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* background: blue; */
+            /* opacity: 0.3; */
+            left: 0;
+            top: 0;
+        }
+
+        .black_top {
+            position: absolute;
+            left: 6.5%;
+            top: 4.5%;
+            width: 502px;
+            height: 35px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .black_middle {
+            position: absolute;
+            left: 17.9%;
+            top: 23.5%;
+            width: 371px;
+            height: 35px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .black_bottom {
+            position: absolute;
+            left: 1.7%;
+            top: 33%;
+            width: 558px;
+            height: 35px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .c {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            /* border: 1px solid #000; */
+            background: rgb(255, 232, 175);
+            font-family: 'DFKai-sb';
+            text-align: center;
+            line-height: 35px;
+            font-size: 25px;
+            color: #000;
+            position: relative;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .c::before {
+            content: '';
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: absolute;
+            border: 0.5px solid #555;
+            top: 2px;
+            left: 2px;
+
+        }
+
+        .text {
+            font-family: 'LiSu';
+            height: 56px;
+            width: auto;
+            font-size: 35px;
+            line-height: 56px;
+            color: #222;
+        }
+
+        .c1 {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            /* border: 1px solid #000; */
+            background: rgb(255, 232, 175);
+            font-family: 'DFKai-sb';
+            text-align: center;
+            line-height: 33px;
+            font-size: 25px;
+            color: red;
+            position: relative;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .c1::before {
+            content: '';
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: absolute;
+            border: 0.5px solid rgba(167, 1, 1, 0.7);
+            top: 2px;
+            left: 2px;
+        }
+
+        .red_bottom {
+            position: absolute;
+            left: 6.5%;
+            top: 89%;
+            width: 502px;
+            height: 35px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .red_middle {
+            position: absolute;
+            left: 17.9%;
+            top: 70.3%;
+            width: 371px;
+            height: 35px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .red_top {
+            position: absolute;
+            left: 1.7%;
+            top: 61%;
+            width: 558px;
+            height: 35px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .col div:nth-child(8) {
+            border-right: 1px solid #000;
+        }
+
+        .container div:nth-child(9) div {
+            border-bottom: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">棋盤裡，車無輪，馬無韁，叫聲將軍堤防堤防</div>
+    <div class="container">
+        <div class="col">
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1 line"></div>
+            <div class="col1 line2"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+        </div>
+        <div class="col">
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1 line2"></div>
+            <div class="col1 line"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+        </div>
+        <div class="col">
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+        </div>
+        <div class="col">
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+        </div>
+        <div class="col2">
+            <div class="text">楚河</div>
+            <div class="text">漢界</div>
+        </div>
+        <div class="col">
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+        </div>
+        <div class="col">
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+        </div>
+        <div class="col">
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1 line"></div>
+            <div class="col1 line2"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+        </div>
+        <div class="col">
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1 line2"></div>
+            <div class="col1 line"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+            <div class="col1"></div>
+        </div>
+        <div class="box">
+            <div class="black_top">
+                <div class="c">車</div>
+                <div class="c">馬</div>
+                <div class="c">象</div>
+                <div class="c">士</div>
+                <div class="c">將</div>
+                <div class="c">士</div>
+                <div class="c">象</div>
+                <div class="c">馬</div>
+                <div class="c">車</div>
+            </div>
+            <div class="black_middle">
+                <div class="c">包</div>
+                <div class="c">包</div>
+            </div>
+            <div class="black_bottom">
+                <div class="c">卒</div>
+                <div class="c">卒</div>
+                <div class="c">卒</div>
+                <div class="c">卒</div>
+                <div class="c">卒</div>
+            </div>
+            <div class="red_top">
+                <div class="c1">兵</div>
+                <div class="c1">兵</div>
+                <div class="c1">兵</div>
+                <div class="c1">兵</div>
+                <div class="c1">兵</div>
+            </div>
+            <div class="red_middle">
+                <div class="c1">炮</div>
+                <div class="c1">炮</div>
+            </div>
+            <div class="red_bottom">
+                <div class="c1">俥</div>
+                <div class="c1">傌</div>
+                <div class="c1">相</div>
+                <div class="c1">仕</div>
+                <div class="c1">帥</div>
+                <div class="c1">仕</div>
+                <div class="c1">相</div>
+                <div class="c1">傌</div>
+                <div class="c1">俥</div>
+            </div>
+        </div>
+    </div>
+    <div class="title">圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</div>
+
+</body>
+
+</html>
